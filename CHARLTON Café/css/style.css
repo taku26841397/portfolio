@@ -1,0 +1,1879 @@
+@charset "utf-8";
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #4a4040;
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギの角ゴ Pro W3", sans-serif;
+    margin: 0;
+    font-weight: 400;
+    background-color: #f7f5f2;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    filter: sepia(10%) saturate(90%);
+
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+h2 {
+    font-family: "Philosopher", serif;
+    letter-spacing: 0.1rem;
+}
+
+/* 共通------------------------------------------ */
+
+.page_title {
+    font-family: "Philosopher", serif;
+    font-size: 7rem;
+
+    text-align: center;
+    transform: translate(0, 190px);
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 1),
+        0 0 3px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.3rem;
+}
+
+.between {
+    width: 100%;
+    height: 1px;
+    background-color: gainsboro;
+    margin: 30px auto;
+}
+
+#wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.section_title {
+    text-align: center;
+    margin: 100px auto;
+    font-size: 2rem;
+    position: relative;
+}
+
+.section_title::after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 2px;
+    background-color: #4a4040;
+    margin: 0 auto;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+}
+
+/* ページヘッダー停止（現在のサイト） */
+.now {
+    padding-bottom: 4px;
+
+    position: relative;
+
+    pointer-events: none;
+}
+
+.now::after {
+    content: "";
+    width: 20px;
+    background-color: rgba(185, 151, 91, .5);
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+}
+
+.now_fake {
+    padding-bottom: 4px;
+
+    position: relative;
+
+
+}
+
+.now_fake::after {
+    content: "";
+    width: 20px;
+    background-color: rgba(185, 151, 91, .5);
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+}
+
+/* パンくずリスト */
+.breadcrumb {
+    max-width: 1200px;
+    margin-left: 50px;
+
+    width: 200px;
+
+
+}
+
+.breadcrumb p {
+    display: inline-block;
+}
+
+.breadcrumb2 {
+    max-width: 1200px;
+    margin-left: 210px;
+
+    width: 500px;
+
+
+}
+
+.breadcrumb2 p {
+    display: inline-block;
+}
+
+
+/* ページの先頭に戻るのボタン */
+.top_btn {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    font-size: 0.9rem;
+    letter-spacing: 0.08rem;
+    color: #5a4632;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    padding: 12px 16px;
+    border-radius: 999px;
+    font-family: "Philosopher", serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+
+}
+
+.top_btn:hover {
+
+    opacity: 1;
+}
+
+.top_btn p {
+    position: relative;
+}
+
+.top_btn p::after {
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 1px;
+    background-color: #5a4632;
+    bottom: -4px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    transition: all 1s;
+}
+
+.top_btn:hover.top_btn p::after {
+    width: 50px;
+}
+
+
+/* フッター */
+footer {
+    background-color: #2F2A26;
+    margin-top: 48px;
+
+    padding: 26px 0;
+
+    color: #F7F5F2;
+}
+
+
+
+.footer_outer {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.footer_img {
+    width: 250px;
+}
+
+footer small {
+    color: #fff;
+
+}
+
+.footer_text h3 {
+    font-weight: normal;
+    border-left: 4px solid #B9975B;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.footer_text p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer_outer .map {
+    width: 150px;
+}
+
+.footer_insta_x .insta {
+    width: 50px;
+}
+
+.footer_insta_x .x {
+    width: 40px;
+}
+
+
+.test {
+    border: 1px solid #B9975B;
+    transition: all 1s;
+}
+
+.deco_img {
+    border: 1px solid #B9975B;
+}
+
+
+/* ロード画面（トップのみ） */
+#loading {
+    position: fixed;
+    inset: 0;
+    background: #F7F5F2 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 0s 1s;
+}
+
+#loading.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading_inner img {
+    width: 250px;
+    animation: glow 2s infinite ease-in-out;
+}
+
+
+.loading_text {
+    color: rgba(74, 64, 64, .7) !important;
+    margin-top: 18px;
+    letter-spacing: .18em;
+    font-size: 16px;
+    opacity: 0;
+    filter: blur(4px);
+}
+
+.loading_text2 {
+    color: rgba(74, 64, 64, .7) !important;
+    margin-top: 8px;
+    letter-spacing: .18em;
+    font-size: 16px;
+    opacity: 0;
+    filter: blur(4px);
+}
+
+
+/* トップページ------------------------- */
+#home {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    margin-bottom: 96px;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+
+
+
+.osirase {
+    background-color: rgba(255, 255, 255, .9);
+
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    border-radius: 10px;
+    color: #4A4040;
+    width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    font-family: "Philosopher", serif;
+    z-index: 300;
+}
+
+.osirase:hover {
+    transition: all 0.5s;
+    transform: translateY(1.05px);
+    box-shadow: none;
+    border: 1px solid #000;
+    transition: all 1s;
+}
+
+.osirase:hover .kizi:after {
+    width: 70px;
+    right: -80px;
+    transition: all 0.8s;
+}
+
+.osirase .day {
+    display: inline-block;
+    margin-right: 30px;
+    padding: 10px;
+    position: relative;
+}
+
+.osirase .day::after {
+    content: "";
+    width: 1px;
+    height: 20px;
+    background-color: #2F2A26;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translateY(-50%);
+    right: -15px;
+}
+
+.osirase .kizi {
+    display: inline-block;
+    position: relative;
+}
+
+.osirase .kizi:after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background-color: #2F2A26;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    right: -50px;
+    transform: translateY(-50%);
+}
+
+#header {
+    height: 60px;
+    width: 100%;
+    background-color: rgba(47, 42, 38, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+    border-bottom: 2px solid #B9975B;
+
+}
+
+#header h1 {
+    width: 20%;
+}
+
+#header h1 img {
+    width: 140px;
+    margin: 5px;
+}
+
+#header ul {
+    display: flex;
+}
+
+#header ul li {
+    padding-right: 20px;
+}
+
+#header ul li a {
+    color: #f2ede7;
+    font-weight: 500;
+    font-family: "Philosopher", serif;
+    font-size: 1.8rem;
+    padding: 2px;
+    letter-spacing: 0.1rem;
+}
+
+.has_sub {
+    position: relative;
+}
+
+.sub_menu {
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-height: 0;
+    background: rgba(47, 42, 38, .9);
+    border-radius: 0 0 10px 10px;
+    flex-direction: column;
+
+
+
+
+}
+
+.sub_menu li {
+
+    overflow: hidden;
+    height: 0px;
+}
+
+.sub_menu li a {
+    letter-spacing: 0.1rem;
+    line-height: 50px;
+}
+
+.sub_menu .now_sub {
+    position: relative;
+    pointer-events: none;
+
+}
+
+.sub_menu .now_sub::after {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background-color: #B9975B;
+    content: "";
+
+    right: 10px;
+    top: 95%;
+    bottom: 50%;
+    transform: translateY(-60%);
+
+}
+
+#header li:hover li {
+
+    height: 30px;
+    overflow: visible;
+    margin-bottom: 12px;
+}
+
+/* ヘッダーの装飾（時間があったら） */
+
+/* .top:hover {
+    transition: all 2s;
+    border: 1px solid #000;
+} */
+
+.about {
+    display: flex;
+    opacity: 1;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about_text {
+    width: 45%;
+    height: 60%;
+    background-color: rgba(255, 255, 255, .9);
+    padding: 20px;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    z-index: 200;
+    border-radius: 10px;
+
+}
+
+.about_text::before {
+    content: "";
+    height: 100%;
+    width: 3px;
+    background-color: #4a4040;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.about_text:hover .about_text::before {
+    height: 100%;
+}
+
+.about_img img {
+    width: 90%;
+    transform: translate(120px);
+    z-index: 100;
+    border-radius: 10px;
+}
+
+.about_text h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+
+}
+
+.about_text p {
+    line-height: 1.9;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.about_text .about_subtitle {
+    font-weight: 600;
+}
+
+#img_between {
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+#img_between img {
+    width: 100%;
+}
+
+#home_news {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+#home_news h2 {
+    font-family: "Philosopher", serif;
+    text-align: center;
+    margin: 100px auto;
+    font-size: 4rem;
+    position: relative;
+}
+
+#home_news h2::after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 2px;
+    background-color: #4a4040;
+    margin: 0 auto;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+}
+
+.home_news_link {
+    max-width: 1200px;
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .9);
+    border-radius: 20px;
+    transition: all 0.5s;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    margin-bottom: 80px;
+
+}
+
+.home_news_link:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+    border: 1px solid #B9975B;
+    opacity: 0.6;
+}
+
+.home_news_link img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    margin-left: 30px;
+}
+
+.home_news_link p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-left: 10px;
+
+}
+
+.home_news_link .kategori {
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+}
+
+.home_news_link .kategori {
+    border: 1px solid #000;
+    background-color: gray;
+    color: #f2ede7;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.news_card_outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-bottom: 100px;
+}
+
+.news_card_category {
+    padding: 20px 0px 40px 0px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #5a4634;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
+    width: 30%;
+    transition: 0.3s ease;
+    height: 250px;
+
+
+}
+
+.news_card_category:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+    border: 1px solid #B9975B;
+}
+
+.news_img2 {
+    margin-top: 10px;
+}
+
+.news_img2 img {
+
+    width: 50%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.4s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.news_card:hover .news_img2 img {
+    width: 100%;
+}
+
+.news_text .news_title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: #5a4634;
+}
+
+.news_text .news_sub {
+    font-size: 0.95rem;
+    color: #7a6a5a;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.news_text .news_cate {
+    font-family: "Philosopher", serif;
+    font-size: 1.5rem;
+    color: #7a6a5a;
+    text-align: center;
+    margin-top: 20px;
+    letter-spacing: 0.1rem;
+}
+
+
+
+
+#home_cotntents {
+    text-align: center;
+}
+
+#home_cotntents .img img {
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #000;
+    width: 650px;
+}
+
+
+.home_cont_title {
+    margin: 30px;
+    font-size: 2rem;
+}
+
+.home_cont_title span {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.food_title_description {
+    background-color: #fff;
+    padding: 30px;
+    max-width: 840px;
+    margin: 0 auto 40px auto;
+    border-left: 3px solid #4a4040;
+    border-right: 3px solid #4a4040;
+
+}
+
+#home_cotntents .btn {
+    margin: 30px auto 100px auto;
+    border: 1px solid #000;
+    display: block;
+    width: 130px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+
+
+
+
+/* MENU-------------------------- */
+#menu {
+    min-height: 60vh;
+    width: 100%;
+    /* height: 630px; */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 24px;
+    background-image: url(../image/coffee_menu_top1.jpg);
+
+}
+
+.about_menu {
+
+    margin: 120px auto 192px;
+    position: relative;
+}
+
+
+
+.about_menu_img img {
+    width: 900px;
+}
+
+.about_menu_text {
+    width: 50%;
+    height: 300px;
+    background-color: #f7f5f2;
+    transform: translate(-200px, 200px);
+    line-height: 1.8;
+    position: absolute;
+    top: 100px;
+    left: 700px;
+    padding: 10px;
+
+}
+
+.about_menu_text h2 {
+    margin-bottom: 30px;
+}
+
+
+.menu_outer h2 {
+    text-align: center;
+    margin-bottom: 48px;
+    font-size: 3rem;
+
+}
+
+.menu_inner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: -120px;
+    margin-top: 100px;
+
+}
+
+.menu_desc {
+    width: 45%;
+    margin-right: 5%;
+}
+
+.menu_desc h3 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.menu_desc p {
+    line-height: 1.9;
+}
+
+.menu_img {
+    width: 50%;
+}
+
+.menu_img .img1 {
+    width: 100%;
+
+    z-index: 300;
+}
+
+.menu_img .img2 {
+    width: 90%;
+    transform: translate(-580px, 100px);
+    z-index: 200;
+}
+
+.menu_img .img3 {
+    width: 40%;
+    transform: translate(50px, -50px);
+}
+
+.menu_img .img4 {
+    width: 60%;
+    transform: translate(240px, -400px);
+}
+
+.menu_img .img5 {
+    width: 100%;
+    z-index: 300;
+
+}
+
+.menu_img .img6 {
+    width: 80%;
+    transform: translate(600px, 200px);
+    z-index: 200;
+}
+
+.menu_img .img7 {
+    width: 70%;
+    transform: translate(100px, -300px);
+}
+
+.menu_img .img8 {
+    width: 60%;
+    transform: translate(300px, -200px);
+}
+
+
+.menu_detail {
+    background-color: #fff;
+    width: 500px;
+    margin: 48px auto;
+}
+
+.menu_detail .title {
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.menu_detail .title::before {
+    content: "";
+    background-color: #000;
+    width: 10px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 10px;
+}
+
+.menu_detail .title::after {
+    content: "";
+    background-color: #000;
+    width: 10px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    right: 10px;
+}
+
+.menu_detail .desc {
+    text-align: center;
+}
+
+.menu_description {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.menu_description .price {
+    font-size: 1.8rem;
+}
+
+.drink {
+    width: 500px;
+    background-color: #fff;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* news------------------------------- */
+#news {
+    min-height: 60vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 24px;
+    background-image: url(../image/coffee_home_b2.jpg);
+}
+
+.news_kiji {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+
+}
+
+#main_kizi {
+    width: 60%;
+    margin-right: 10%;
+    margin-bottom: 100px;
+    margin-top: 48px;
+}
+
+#sub_kiji {
+    width: 30%;
+    margin-top: 66px;
+}
+
+#main_kizi .hizuke {
+    width: 100px;
+    height: 100px;
+    background-color: #4a4040;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#main_kizi .hizuke_notice {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#main_kizi .hizuke_shop {
+    width: 100px;
+    height: 100px;
+    background-color: #ba9e72;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#main_kizi .hizuke_shop {
+    width: 100px;
+    height: 100px;
+    background-color: #ba9e72;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#main_kizi .day {
+    color: #f2ede7;
+    font-size: 1.4rem;
+}
+
+#main_kizi .day span {
+    display: block;
+    font-size: 1rem;
+
+}
+
+.yokosen {
+    display: block;
+    width: 80px;
+    height: 1px;
+    background-color: #f7f5f2;
+}
+
+.news_kiji .title {
+    width: 600px;
+    margin-left: 120px;
+    padding-top: 3px;
+    margin-bottom: 50px;
+}
+
+.news_kiji .title p {
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+#main_kizi .title p span {
+    display: block;
+    font-size: 0.9rem;
+}
+
+#main_kizi .title p a {
+    color: blue;
+    text-decoration: underline;
+}
+
+#main_kizi .img {
+    width: 700px;
+    margin-bottom: 30px;
+}
+
+#main_kizi .img img {
+    border-radius: 10px;
+}
+
+#main_kizi .kizi_honbun {
+    width: 600px;
+}
+
+#main_kizi .kizi_honbun p {
+    line-height: 2.3;
+}
+
+#sub_kiji .kategori ul {
+    margin-bottom: 50px;
+
+}
+
+
+#sub_kiji .kategori ul li {
+    border-top: 1px solid #4a4040;
+}
+
+#sub_kiji .kategori ul li a {
+    display: block;
+    padding: 15px 100px 15px 0;
+    font-family: "Philosopher", serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+
+}
+
+/* カテゴリ装飾 */
+
+#sub_kiji .kategori ul li {
+    padding: 8px;
+    border: 1px solid #4a4040;
+    margin: 4px;
+    width: 400px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.12);
+    transition: all 0.5s;
+    background-color: #fff;
+
+}
+
+#sub_kiji .kategori ul li:hover {
+    transform: translate(5px) scale(1.01);
+    box-shadow: none;
+}
+
+#sub_kiji .kategori ul li.now_kizi {
+    background-color: rgba(47, 42, 38, 0.95);
+    transform: none
+}
+
+#sub_kiji .kategori ul li.now_kizi a {
+    color: #f2ede7;
+    pointer-events: none;
+}
+
+#sub_kiji .kategori ul li:first-child {
+    border-top: 2px solid #4a4040;
+}
+
+#sub_kiji .kategori ul li:last-child {
+    border-bottom: 2px solid #4a4040;
+}
+
+#sub_kiji .kategori ul li span {
+    font-size: 0.8rem;
+}
+
+.about_me .back {
+    background-color: #f2ede7;
+
+}
+
+.about_me .back p {
+    text-align: center;
+}
+
+.about_me .back .back_text {
+    width: 320px;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.about_me .img_logo {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+}
+
+.img_shop {
+    margin-bottom: 20px;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about_me h3 {
+    margin-bottom: 20px;
+    font-family: "Philosopher", serif;
+    font-size: 1.5rem;
+}
+
+
+
+.about_me p {
+    line-height: 1.8;
+    font-family: "Philosopher", serif;
+
+}
+
+.about_me p:nth-of-type(1) {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.latest_news_outer {
+    margin-bottom: 50px;
+}
+
+.latest_news_outer h3 {
+    margin-bottom: 20px;
+
+
+}
+
+.latest_news {
+    width: 360px;
+    display: flex;
+}
+
+.latest_news .link {
+    background-color: #fff;
+
+    margin-right: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.8s;
+    box-shadow: 0 0 1px 0px #000;
+}
+
+.latest_news .link img {
+    max-width: 200px;
+    max-height: 100px;
+}
+
+.latest_news .link:hover {
+    transform: translateY(1.05px);
+    box-shadow: none;
+}
+
+.latest_news .link p {
+    text-align: center;
+}
+
+
+/* サブ記事 */
+#notice {
+    min-height: 60vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 24px;
+    background-image: url(../image/coffee_notice.jpg);
+}
+
+#shop {
+    min-height: 60vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 24px;
+    background-image: url(../image/coffee_shop.jpg);
+}
+
+#event {
+    min-height: 60vh;
+    width: 100%;
+
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 24px;
+    background-image: url(../image/coffee_event.jpg);
+}
+
+
+
+
+
+/* COFFEE------------------------- */
+#coffee {
+    min-height: 60vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 24px;
+    background-image: url(../image/coffee_menu_mo4.jpg);
+}
+
+.about_coffee {
+    position: relative;
+    margin-top: 144px;
+    margin-bottom: 200px;
+}
+
+.about_coffee_img {
+    width: 900px;
+}
+
+.about_coffee_text {
+    position: absolute;
+    top: 110px;
+    left: 800px;
+    width: 650px;
+    height: 350px;
+    background-color: #f7f5f2;
+    transform: translate(-200px);
+    line-height: 1.8;
+}
+
+.about_coffee_text h3 {
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+.about_coffee_text p {
+    padding: 20px;
+    font-size: 1rem;
+}
+
+.about_coffee_text img {
+    width: 60%;
+}
+
+.menu_outer h2 {
+    font-family: "Philosopher", serif;
+    font-weight: normal;
+    border-left: 1px solid #4a4040;
+    border-right: 1px solid #4a4040;
+    width: 700px;
+    margin: 0 auto;
+    font-size: 3rem;
+}
+
+.coffee_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coffee_img {
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.coffee_img .img1 {
+    width: 700px;
+    height: 300px;
+    border-radius: 10px;
+    transform: translate(130px, -50px);
+
+}
+
+.coffee_img .img2 {
+    width: 400px;
+    transform: translate(-270px, -30px);
+    border-radius: 10px;
+}
+
+.coffee_img .img3 {
+    width: 300px;
+    height: 200px;
+    transform: translate(-50px, -70px);
+    border-radius: 10px;
+}
+
+.coffee_img .img4 {
+    width: 700px;
+    transform: translate(-355px);
+    border-radius: 10px;
+}
+
+.coffee_img .img5 {
+    width: 500px;
+    transform: translate(200px, 50px);
+    border-radius: 10px;
+}
+
+.coffee_img .img6 {
+    width: 300px;
+    height: 200px;
+    transform: translate(-700px, 50px);
+    border-radius: 10px;
+}
+
+.coffee_img .img7 {
+    width: 300px;
+    height: 400px;
+    transform: translate(300px, 50px);
+    border-radius: 10px;
+}
+
+.coffee_img .img8 {
+    width: 400px;
+    height: 250px;
+    transform: translate(-600px, -50px);
+    border-radius: 10px;
+}
+
+.coffee_desc {
+    width: 600px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    border-top: 3px solid #4a4040;
+    border-bottom: 3px solid #4a4040;
+    transform: translate(100px, -250px);
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.coffee_desc2 {
+    width: 600px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    border-top: 3px solid #4a4040;
+    border-bottom: 3px solid #4a4040;
+
+    transform: translate(800px, -300px);
+    line-height: 1.8;
+}
+
+
+.deco_text {
+    margin-bottom: 20px;
+    font-family: "Philosopher", serif;
+    font-size: 1.5rem
+}
+
+.deco_text span {
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギの角ゴ Pro W3", sans-serif;
+    font-size: 0.9rem;
+}
+
+/* 消えて現れる */
+.fadein {
+    opacity: 0;
+}
+
+.fadein2 {
+    opacity: 0;
+}
+
+/* ホバーすると消える */
+.slider {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides_on {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.slide_on {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.8s ease;
+}
+
+.is_active {
+    opacity: 1;
+}
+
+.is_inactive {
+    opacity: 0;
+}
+
+
+/* ドット */
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: gray;
+    border-radius: 50%;
+    transition: all 0.8s;
+}
+
+.dot_is_active {
+    background-color: #333;
+}
+
+@media(max-width: 768px) {
+
+    main {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* 共通 */
+    .page_title {
+        font-size: 6rem;
+    }
+
+    #home {
+        width: 100wh;
+    }
+
+    #wrapper {
+        margin: 0 auto;
+        max-width: 700px;
+    }
+
+    .about {
+        display: flex;
+        opacity: 1;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .about_text {
+        padding-bottom: 100px;
+        width: 300px;
+        height: 200px;
+    }
+
+    .about_text p {
+        font-size: 0.8rem;
+    }
+
+    .news_img2 img {
+
+        width: 70%;
+        height: 100px;
+
+    }
+
+    .food_title_description {
+        width: 600px;
+        text-align: left;
+    }
+
+    /* MENU */
+    .about_menu_text {
+        width: 75%;
+        transform: translate(-550px, 200px);
+    }
+
+    .menu_desc {
+        width: 35%;
+        margin-right: 5%;
+        font-size: 0.8rem;
+    }
+
+    .menu_detail {
+        background-color: #fff;
+        width: 280px;
+        margin: 48px auto;
+    }
+
+    .menu_detail .title {
+        width: 200px;
+    }
+
+    .slides_on {
+        margin-left: 40px;
+    }
+
+    .slides_on img {
+        width: 400px;
+    }
+
+    .menu_img .img1 {
+        width: 80%;
+
+    }
+
+    .menu_img .img2 {
+        width: 60%;
+        transform: translate(0px, 100px);
+        z-index: 200;
+    }
+
+    .menu_img .img3 {
+        width: 30%;
+        transform: translate(50px, 100px);
+    }
+
+    .menu_img .img4 {
+        width: 50%;
+        transform: translate(200px, -160px);
+    }
+
+    .menu_inner {
+        margin-bottom: 120px;
+    }
+
+    .drink {
+        width: 280px;
+        background-color: #fff;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .menu_img .img5 {
+        width: 80%;
+        z-index: 300;
+
+    }
+
+    .menu_img .img6 {
+        width: 60%;
+        transform: translate(100px, 200px);
+        z-index: 200;
+    }
+
+    .menu_img .img7 {
+        width: 30%;
+        transform: translate(-250px, 0px);
+    }
+
+    .menu_img .img8 {
+        width: 50%;
+        transform: translate(100px, -100px);
+    }
+
+    /* NEWS */
+
+    .news_kiji {
+        display: block;
+    }
+
+    #main_kizi .img img {
+        border-radius: 10px;
+        width: 600px;
+    }
+
+    #main_kizi {
+        margin-left: 24px;
+        width: 500px;
+
+    }
+
+    #main_kizi .title {
+        font-size: 400px;
+    }
+
+    #main_kizi .title p {
+        font-size: 1.3rem;
+    }
+
+    #main_kizi .hizuke {
+        width: 100px;
+        height: 100px;
+        background-color: #4a4040;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+
+    #main_kizi .hizuke_notice {
+        width: 80px;
+        height: 80px;
+        background-color: gray;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+
+    #main_kizi .hizuke_shop {
+        width: 80px;
+        height: 80px;
+        background-color: #ba9e72;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+
+    #main_kizi .hizuke_shop {
+        width: 100px;
+        height: 100px;
+        background-color: #ba9e72;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+
+    #main_kizi .day {
+        color: #f2ede7;
+        font-size: 1.2rem;
+    }
+
+    #main_kizi .day span {
+        display: block;
+        font-size: 1rem;
+
+    }
+
+    #sub_kiji {
+        margin-left: 24px;
+        max-width: 700px;
+        /* margin: 0 auto; */
+    }
+
+    .kategori ul li {
+        width: 400px;
+    }
+
+    .latest_news {
+        width: 600px;
+        gap: 48px;
+        justify-content: center;
+        align-items: center;
+        /* margin: 0 auto; */
+        margin-left: 72px;
+    }
+
+
+    .about_me .back {
+        width: 500px;
+    }
+
+    .about_me .back .back_text {
+        width: 500px;
+        margin: 0 auto;
+
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .deco_text {
+        width: 300px;
+    }
+
+    /* coffee */
+    .about_coffee_text {
+        position: absolute;
+        top: 300px;
+        left: 0%;
+        width: 550px;
+        height: 250px;
+        background-color: #f7f5f2;
+        transform: translate(0px);
+        line-height: 1.8;
+    }
+
+    .about_coffee_text h3 {
+        padding: 20px;
+        font-size: 1.0rem;
+    }
+
+    .about_coffee_text p {
+        font-size: 0.9rem;
+    }
+
+    .about_coffee {
+        position: relative;
+        margin-top: 144px;
+        margin-bottom: 400px;
+    }
+
+    .about_coffee_img {
+        width: 600px;
+    }
+
+    .menu_outer h2 {
+        font-size: 2.5rem;
+    }
+
+    .menu_outer h2 {
+        width: 500px;
+        font-size: 2rem;
+    }
+
+    .coffee_desc {
+        width: 500px;
+        height: 200px;
+        transform: translate(24px, -200px);
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .coffee_desc2 {
+        width: 500px;
+        height: 260px;
+        padding: 20px;
+        font-size: 0.9rem;
+        transform: translate(24px, -250px);
+        line-height: 1.8;
+    }
+
+    .coffee_img .img1 {
+        width: 300px;
+        height: 150px;
+        transform: translate(50px, 0px);
+
+    }
+
+    .coffee_img .img2 {
+        width: 300px;
+        transform: translate(100px, 50px);
+    }
+
+    .coffee_img .img3 {
+        width: 300px;
+        height: 200px;
+        transform: translate(-230px, 0px);
+    }
+
+    .coffee_img .img4 {
+        width: 300px;
+        transform: translate(100px, 0);
+    }
+
+    .coffee_img .img5 {
+        width: 300px;
+        transform: translate(-230px, 50px);
+    }
+
+    .coffee_img .img6 {
+        width: 300px;
+        height: 200px;
+        transform: translate(80px, 0px);
+        border-radius: 10px;
+    }
+
+    .coffee_img .img7 {
+        width: 200px;
+        height: 300px;
+        transform: translate(-200px, 200px);
+        border-radius: 10px;
+    }
+
+    .coffee_img .img8 {
+        width: 300px;
+        height: 200px;
+        transform: translate(50px, -200px);
+        border-radius: 10px;
+    }
+
+    .footer_img {
+        width: 400px;
+        display: block;
+        margin-left: 150px;
+    }
+
+    .footer_outer {
+        display: block;
+    }
+
+    .footer_text h3 {
+        width: 500px;
+        margin: 12px auto;
+        font-size: 1.7rem;
+    }
+
+    .footer_text h3:nth-of-type(even) {
+        margin-left: 400px;
+    }
+
+    .footer_text p {
+        width: 500px;
+        margin: 12px auto;
+        font-size: 1.1rem;
+        /* margin-bottom: 10px; */
+    }
+
+    .footer_text p:nth-of-type(even) {
+        margin-left: 400px;
+    }
+
+    .footer_outer .map {
+        width: 200px;
+        margin-left: 150px;
+        margin-top: 48px;
+        /* margin: 0px auto; */
+        display: block;
+    }
+
+    .footer_insta_x {
+        width: 150px;
+        margin-left: 150px;
+        margin-top: 24px;
+    }
+}

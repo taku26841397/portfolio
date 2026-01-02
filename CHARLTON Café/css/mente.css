@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+body{
+    
+    background-color: #EEEAE4;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mente{
+ text-align: center;
+    
+
+    
+}
+.mente img{
+    width: 300px;
+}
